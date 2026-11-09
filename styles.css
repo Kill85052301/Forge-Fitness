@@ -177,6 +177,7 @@ td { color: var(--muted); }
 footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px 40px; margin-top: 32px; padding-block: 30px 40px; border-top: 1px solid var(--line); }
 footer p { margin: 0; font-size: 12px; color: var(--muted); }
 footer p:first-child { color: var(--text); font-weight: 700; letter-spacing: .04em; }
+footer .footer-credit { flex-basis: 100%; text-align: center; font-size: 11px; color: var(--muted); }
 
 /* Local photography is an additive layer; the existing type and grids remain. */
 .gym-photography {
@@ -234,6 +235,50 @@ footer p:first-child { color: var(--text); font-weight: 700; letter-spacing: .04
 }
 
 .menu-toggle { display: none; }
+
+/* Escala desktop: grades amplas e leitura com larguras próprias. */
+@media (min-width: 1200px) {
+  header, main, footer {
+    width: min(1440px, calc(100% - clamp(80px, 6vw, 128px)));
+  }
+  body { font-size: clamp(16px, 1.05vw, 18px); }
+  header > a { font-size: clamp(28px, 2.1vw, 34px); }
+  nav ul { column-gap: clamp(28px, 2.2vw, 36px); }
+  nav a { font-size: clamp(13px, .95vw, 16px); }
+  nav li:last-child a { padding: 12px 22px; }
+  h1 { max-width: 1080px; font-size: clamp(74px, 6.2vw, 96px); }
+  h2 { font-size: clamp(40px, 3.2vw, 50px); }
+  h3 { font-size: clamp(21px, 1.5vw, 25px); }
+  main > p { max-width: 880px; font-size: clamp(18px, 1.25vw, 21px); }
+  section > p { max-width: 900px; }
+  .page-home h1 { max-width: 1120px; font-size: clamp(104px, 8vw, 128px); }
+  .page-home section:first-child > p { max-width: 780px; font-size: clamp(18px, 1.25vw, 21px); }
+  section > p:last-child > a,
+  article > p:last-child > a { font-size: clamp(14px, 1vw, 16px); padding: 16px 26px; }
+  .page-classes article { padding: clamp(32px, 2.5vw, 40px); }
+  .page-classes article h3 { font-size: clamp(25px, 1.8vw, 30px); }
+  .page-classes article p:last-child,
+  .page-memberships article ul,
+  caption { font-size: clamp(14px, 1vw, 16px); }
+  .page-memberships article { padding: 36px clamp(26px, 2.2vw, 36px) 30px; }
+  .page-memberships article h3 { font-size: clamp(14px, 1vw, 16px); }
+  .page-memberships article > p:first-of-type strong { font-size: clamp(36px, 2.6vw, 44px); }
+  .page-home section[aria-labelledby="estrutura"] > ul,
+  .page-about section[aria-labelledby="proposta"] ul { gap: 20px; }
+  .page-home section[aria-labelledby="estrutura"] li,
+  .page-about section[aria-labelledby="proposta"] li { padding: 30px; }
+  .page-about section[aria-labelledby="historia"],
+  .page-about section[aria-labelledby="visita"],
+  .page-memberships section[aria-labelledby="condicoes"],
+  .page-memberships section[aria-labelledby="duvidas"] { max-width: 1080px; }
+  .page-about section[aria-labelledby="historia"] > p { max-width: 900px; font-size: clamp(18px, 1.25vw, 21px); }
+  .page-about section[aria-labelledby="beneficios"],
+  .page-contact section { max-width: 1200px; }
+  .page-classes section[aria-labelledby="grade"] { max-width: 1280px; }
+  .page-memberships section[aria-labelledby="duvidas"] > p { max-width: 900px; }
+  thead th { font-size: clamp(12px, .9vw, 14px); }
+  footer p { font-size: clamp(12px, .9vw, 14px); }
+}
 
 /* Tablet layout: keep intrinsic content from widening grid/flex tracks. */
 @media (max-width: 1024px) {
