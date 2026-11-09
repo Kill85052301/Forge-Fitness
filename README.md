@@ -1,18 +1,25 @@
 # FORGE FITNESS
 
-Estrutura inicial de um site fictício de academia, com conteúdo em português brasileiro.
+Site de uma academia fictícia voltada à apresentação de sua estrutura, modalidades e planos. A identidade visual combina preto, grafite e vermelho, com tipografia de impacto e fotografias de ambientes e treinos.
 
-- `index.html`: apresentação, estrutura e primeiros passos.
-- `about.html`: história, proposta e benefícios.
-- `classes.html`: modalidades e grade ilustrativa.
-- `memberships.html`: planos, valores e condições fictícias.
-- `contact.html`: endereço, horários e contatos ilustrativos.
-- `styles.css`: sistema visual compartilhado, com preto, grafite, destaques vermelhos, tipografia de impacto e cartões de planos.
+## Páginas
 
-As cinco páginas possuem navegação entre si, indicação da página atual e link para pular ao conteúdo. Os arquivos usam caminhos relativos e não precisam de instalação, compilação ou dependências externas.
+- **Início** — apresentação da academia, estrutura e orientações para a primeira visita.
+- **Sobre** — proposta, benefícios e espaços da academia.
+- **Modalidades** — musculação, treinamento funcional, ciclismo indoor, mobilidade e alongamento, com grade ilustrativa de aulas.
+- **Planos** — comparação entre Essencial, Evolução e Completo, com valores, benefícios e condições ilustrativas.
+- **Contato** — localização, horários e canais de atendimento fictícios.
 
-As cinco páginas compartilham uma identidade visual escura, com hierarquia tipográfica, botões de ação e ajustes de layout para telas menores. Fotografias reais e ilustrativas de interiores, equipamentos, musculação, funcional e aulas em grupo foram adicionadas sem substituir o conteúdo ou alterar os destinos dos links. Não há animações, integrações, envio de mensagens, reservas ou pagamentos. Os canais de contato são intencionalmente ilustrativos.
+## Recursos e apresentação
 
-As fotos estão armazenadas localmente em `assets/images/`, em WebP com duas resoluções por imagem. Fontes, créditos, licença e detalhes de otimização estão em `assets/images/PHOTO-CREDITS.md`. Nenhuma foto requer conexão externa durante o uso do site.
+As cinco páginas oferecem navegação integrada, indicação da página ativa e menu para celular. Fotografias, cartões de planos e tabelas adaptam-se a computadores, tablets e dispositivos móveis.
 
-Nenhum navegador, servidor de prévia ou ferramenta de teste do site foi executado nesta implementação, conforme solicitado.
+Animações discretas acompanham a entrada das páginas e das seções, respeitando a preferência por movimento reduzido.
+
+## Tecnologias
+
+HTML, CSS e JavaScript puro, com fotografias locais em WebP e versões responsivas.
+
+## Serviços demonstrativos
+
+A academia, os contatos, as ofertas e a grade de aulas são fictícios. Matrículas, agendamentos, reservas de aulas e pagamentos não são realizados pelo site. Os links dos planos direcionam às informações de contato.
