@@ -1,25 +1,43 @@
 # FORGE FITNESS
 
-Site de uma academia fictícia voltada à apresentação de sua estrutura, modalidades e planos. A identidade visual combina preto, grafite e vermelho, com tipografia de impacto e fotografias de ambientes e treinos.
+Website de uma academia fictícia, criado por Shaide para portfólio de desenvolvimento front-end. O projeto apresenta uma experiência completa de navegação entre cinco páginas, com identidade visual em preto, grafite e vermelho, tipografia marcante e fotografias profissionais de ambientes e treinos.
+
+**[Acesse o site publicado](https://kill85052301.github.io/Forge-Fitness/)**
+
+## Visão geral
+
+A FORGE FITNESS reúne informações sobre estrutura, modalidades, planos e atendimento em uma interface responsiva. A composição valoriza a hierarquia das informações, a leitura dos benefícios e o acesso às principais chamadas para ação.
 
 ## Páginas
 
 - **Início** — apresentação da academia, estrutura e orientações para a primeira visita.
-- **Sobre** — proposta, benefícios e espaços da academia.
+- **Sobre** — história, proposta e benefícios da academia.
 - **Modalidades** — musculação, treinamento funcional, ciclismo indoor, mobilidade e alongamento, com grade ilustrativa de aulas.
-- **Planos** — comparação entre Essencial, Evolução e Completo, com valores, benefícios e condições ilustrativas.
-- **Contato** — localização, horários e canais de atendimento fictícios.
+- **Planos** — comparação dos planos Essencial, Evolução e Completo, com preços, benefícios e condições fictícios.
+- **Contato** — localização, horários de funcionamento e canais de atendimento ilustrativos.
 
-## Recursos e apresentação
+## Principais recursos
 
-As cinco páginas oferecem navegação integrada, indicação da página ativa e menu para celular. Fotografias, cartões de planos e tabelas adaptam-se a computadores, tablets e dispositivos móveis.
+- Layouts adaptados para computadores, tablets e smartphones.
+- Navegação entre as cinco páginas, com indicação da página ativa.
+- Menu hambúrguer no celular, com abertura suave e fechamento pela tecla Escape.
+- Cartões de planos com destaque visual para preços, benefícios e ações.
+- Fotografias locais em WebP, com versões responsivas e carregamento adiado nas imagens secundárias.
+- Animações sutis de entrada, revelação de seções e efeitos de hover.
+- Recursos de acessibilidade, incluindo HTML semântico, navegação por teclado, foco visível, textos alternativos e respeito à preferência por movimento reduzido.
 
-Animações discretas acompanham a entrada das páginas e das seções, respeitando a preferência por movimento reduzido.
+## Tecnologias utilizadas
 
-## Tecnologias
+- **HTML5** para a estrutura semântica das páginas.
+- **CSS3** com Flexbox, CSS Grid, variáveis e media queries para estilos e responsividade.
+- **JavaScript puro** para o menu mobile e o controle das animações.
+- **Intersection Observer API** para a entrada das seções durante a rolagem.
+- **Web Animations API** para as animações de entrada.
+- **WebP e srcset** para imagens otimizadas em diferentes resoluções.
+- **GitHub Pages** para hospedagem do site.
 
-HTML, CSS e JavaScript puro, com fotografias locais em WebP e versões responsivas.
+## Sobre o projeto
 
-## Serviços demonstrativos
+Projeto de portfólio com finalidade demonstrativa. A academia, o endereço, os contatos, os planos e a programação de aulas são fictícios. As chamadas para ação conduzem às páginas informativas do próprio site.
 
-A academia, os contatos, as ofertas e a grade de aulas são fictícios. Matrículas, agendamentos, reservas de aulas e pagamentos não são realizados pelo site. Os links dos planos direcionam às informações de contato.
+Desenvolvido por **Shaide**.

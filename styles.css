@@ -510,3 +510,116 @@ footer .footer-credit { flex-basis: 100%; text-align: center; font-size: 11px; c
     border-color: var(--text);
   }
 }
+
+/* Identidade visual compartilhada */
+:root { --background:#080809; --surface:#131315; --surface-raised:#1b191b; --text:#fafafa; --muted:#c9c8cc; --red:#c9111c; --red-hover:#e02130; --display:"Segoe UI",Arial,sans-serif; }
+body { background:var(--background); }
+header { min-height:76px; padding-block:14px; }
+header > a { gap:10px; }
+header > a::before { width:38px; height:26px; margin:0; transform:none; box-shadow:none; clip-path:polygon(0 35%,8% 35%,8% 15%,17% 15%,17% 3%,26% 3%,26% 43%,74% 43%,74% 3%,83% 3%,83% 15%,92% 15%,92% 35%,100% 35%,100% 65%,92% 65%,92% 85%,83% 85%,83% 97%,74% 97%,74% 57%,26% 57%,26% 97%,17% 97%,17% 85%,8% 85%,8% 65%,0 65%); }
+.brand { display:grid; gap:3px; font:700 9px/1 Arial,sans-serif; letter-spacing:.42em; }
+.brand b { font:italic 900 25px/.95 Arial,sans-serif; letter-spacing:-.055em; }
+nav a { text-transform:none; letter-spacing:0; }
+nav li:last-child a { background:var(--red); color:white; border-color:var(--red); border-radius:6px; }
+h1,h2 { letter-spacing:-.035em; }
+section > p:last-child > a,article > p:last-child > a { border-radius:6px; }
+.page-home #introducao { font-style:italic; font-weight:900; max-width:12ch; }
+#introducao em { display:block; color:#ee2331; }
+.page-home section:first-child::after { background:linear-gradient(90deg,#080809 0%,#080809eb 34%,#08080970 64%,#08080924),linear-gradient(118deg,transparent 86%,#bd101bb0 86%,#bd101bb0 89%,transparent 89%); }
+.page-home section:first-child > p { max-width:55ch; }
+.page-classes article,.page-memberships article,.page-about section[aria-labelledby="proposta"] li,.page-home section[aria-labelledby="estrutura"] li { border:1px solid #353538; border-radius:10px; background:linear-gradient(145deg,#1a1a1c,#101012); }
+.page-memberships article:nth-of-type(2) { border-color:var(--red); background:linear-gradient(155deg,#301114,#111012 70%); }
+.page-memberships article h3 { font-size:22px; text-transform:none; letter-spacing:-.025em; }
+.page-memberships article small { font:600 .44em/1.3 "Segoe UI",sans-serif; }
+.page-memberships article li::marker { content:"✓  "; color:#f43140; }
+.page-memberships article:not(:nth-of-type(2)) > p:last-child a { background:transparent; border-color:#89898e; }
+.page-memberships main > h1,.page-memberships main > p { margin-inline:auto; text-align:center; }
+.page-memberships main { position:relative; isolation:isolate; }
+.page-memberships main > figure { position:absolute; inset:0 0 auto; height:475px; margin:0; z-index:-1; border:0; }
+.page-memberships main > figure img { height:100%; opacity:.3; }
+.page-memberships main > figure::after { content:""; position:absolute; inset:0; background:linear-gradient(0deg,var(--background),transparent); }
+.page-memberships section[aria-labelledby="opcoes"] { border:0; padding-top:0; margin-top:36px; }
+.page-memberships #opcoes { text-align:center; }
+.page-memberships #opcoes::before { margin-inline:auto; }
+@media(min-width:901px){
+ .page-home section:first-child { padding-inline:clamp(28px,4vw,64px); }
+ .page-home #introducao { font-size:clamp(68px,6.2vw,100px); }
+ .page-home .hero-photography img { object-position:right 42%; }
+ .page-home section[aria-labelledby="estrutura"] > ul { grid-template-columns:repeat(4,minmax(0,1fr)); }
+ .page-about main,.page-contact main { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:24px 4%; align-items:start; }
+ .page-about main > h1 { grid-column:1; margin-bottom:0; }
+ .page-about main > figure { grid-column:2; grid-row:1 / 3; margin:0; align-self:stretch; }
+ .page-about main > figure img { height:100%; object-fit:cover; }
+ .page-about main > section { grid-column:1 / -1; margin-block:24px; }
+ .page-about main > section[aria-labelledby="historia"] { grid-column:1; margin:0; border:0; padding-top:0; }
+ .page-contact main > :is(h1,p) { grid-column:1 / -1; margin:0; }
+ .page-contact main > section { margin:0; padding:28px; border:1px solid var(--line); border-radius:10px; background:var(--surface); }
+ .page-contact section[aria-labelledby="localizacao"] {
+   grid-row:span 2;
+   align-self:stretch;
+   display:flex;
+   flex-direction:column;
+   justify-content:space-between;
+ }
+ .page-contact section[aria-labelledby="localizacao"] > * { flex-shrink:0; }
+ .page-contact section[aria-labelledby="visita"] { grid-column:1 / -1; }
+ .page-contact dl { grid-template-columns:minmax(100px,1fr) 1.5fr; }
+ .page-contact dt,.page-contact dd { padding-block:12px; }
+}
+@media(max-width:767.98px){
+ .page-home section[aria-labelledby="introducao"]::after { background:linear-gradient(105deg,#080809f5,#080809af); }
+ .page-home #introducao { font-size:clamp(32px,8.5vw,54px); }
+ .page-memberships main > figure { height:340px; }
+}
+
+/* Ritmo editorial e proporção das fotografias */
+main > h1 { font-size:clamp(2rem,4.2vw,3.75rem); line-height:1.06; margin-bottom:18px; }
+main h2 { font-size:clamp(1.55rem,2.5vw,2.35rem); margin-bottom:18px; }
+main section { margin-block:clamp(30px,3.2vw,48px); padding-top:clamp(22px,2.4vw,34px); }
+main section h2::before { width:28px; height:3px; margin-bottom:12px; }
+.page-home section:first-child { padding-block:clamp(30px,4vw,58px); }
+.page-home #introducao { max-width:13ch; margin-bottom:20px; }
+.page-home #introducao::before { width:42px; height:4px; margin-bottom:18px; }
+.page-home section:first-child > p { line-height:1.58; margin-bottom:14px; }
+.page-home section:first-child > p:last-child { margin-block:22px 0; }
+.page-home section[aria-labelledby="estrutura"] .gym-photography img,
+.page-classes main > .gym-photography img { height:clamp(145px,21vw,280px); }
+.page-classes .gym-photography--card img { height:clamp(132px,16vw,205px); }
+.page-classes .gym-photography--card { margin-bottom:18px; }
+.page-memberships main > h1 { max-width:25ch; }
+.page-memberships main > p { max-width:63ch; }
+.page-memberships section[aria-labelledby="opcoes"] { margin-top:24px; gap:18px; }
+.page-memberships #opcoes { font-size:1.35rem; margin-bottom:0; }
+.page-memberships article { padding:clamp(20px,2vw,30px); }
+.page-memberships article h3 { margin-bottom:14px; }
+.page-memberships article > p:first-of-type { margin-bottom:16px; padding-bottom:16px; }
+.page-memberships article li { margin-bottom:8px; }
+.page-contact section[aria-labelledby="localizacao"] img { height:clamp(145px,18vw,230px); }
+.page-contact main > section[aria-labelledby="visita"] { width:100%; max-width:none; }
+
+@media (min-width:901px) {
+  main { padding-top:clamp(36px,3.5vw,54px); }
+  .page-home #introducao { font-size:clamp(58px,5.2vw,84px); }
+  .page-about main { grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr); gap:20px 4%; }
+  .page-about main > figure { position:relative; min-height:260px; }
+  .page-about main > figure img { position:absolute; inset:0; }
+  .page-about main > section[aria-labelledby="proposta"],
+  .page-about main > section[aria-labelledby="beneficios"] { grid-column:auto; margin-block:16px; }
+  .page-about section[aria-labelledby="proposta"] ul { gap:12px; }
+  .page-about section[aria-labelledby="proposta"] li { padding:18px; }
+  .page-contact main { gap:18px 24px; }
+  .page-contact main > section { padding:clamp(20px,2vw,30px); }
+  .page-contact main > section[aria-labelledby="visita"] {
+    display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);
+    align-items:center; gap:8px 32px;
+  }
+  .page-contact #visita { grid-column:1; margin:0; }
+  .page-contact #visita + p { grid-column:1; margin:0; }
+  .page-contact #visita ~ p:last-child { grid-column:2; grid-row:1 / 3; text-align:right; }
+}
+@media (max-width:900px) {
+  .page-about main > figure img { height:clamp(165px,33vw,275px); }
+  .page-about main > figure,.page-classes main > figure { margin-block:20px; }
+  .page-memberships main > figure { height:280px; }
+  .page-contact section[aria-labelledby="visita"] { padding:20px; border:1px solid var(--line); border-radius:10px; background:var(--surface); }
+}
