@@ -4,8 +4,10 @@
   document.documentElement.dataset.forgeMotionInitialized = 'true';
 
   const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const compactScreen = window.matchMedia('(max-width: 1024px)');
   const completed = new WeakSet();
   const active = new Map();
+  const pending = new Set();
   const sections = [...document.querySelectorAll('main > section')];
   let observer;
   let stopped = false;
@@ -13,6 +15,8 @@
   function settle(element) {
     completed.add(element);
     observer?.unobserve(element);
+    pending.delete(element);
+    if (pending.size === 0) observer?.disconnect();
     active.get(element)?.cancel();
     active.delete(element);
   }
@@ -26,7 +30,7 @@
     // A shallow fade keeps already-painted content visible without a dark flash.
     // Only initial page entrances fade; scroll reveals retain their existing motion.
     // Read the current size without resize/orientation listeners that could replay effects.
-    const compact = window.matchMedia('(max-width: 1024px)').matches;
+    const compact = compactScreen.matches;
     if (compact) distance = Math.min(distance, pageEntrance ? 2 : 6);
     const frames = pageEntrance
       ? [{ opacity: compact ? .96 : .86, translate: `0 ${distance}px` }, { opacity: 1, translate: '0 0' }]
@@ -46,7 +50,7 @@
   function stop() {
     stopped = true;
     observer?.disconnect();
-    sections.forEach(settle);
+    pending.clear();
     for (const animation of active.values()) animation.cancel();
     active.clear();
   }
@@ -76,14 +80,24 @@
   }
 
   // Measure before applying motion; never animate a parent and its children.
-  const visible = [...document.querySelectorAll('header, main > *')].filter(element => {
-    const rect = element.getBoundingClientRect();
-    return rect.top < window.innerHeight && rect.bottom > 0;
-  });
+  const viewportHeight = window.innerHeight;
+  const positions = new Map(
+    [...document.querySelectorAll('header, main > *')].map(element => [
+      element, element.getBoundingClientRect()
+    ])
+  );
+  const visible = [...positions].filter(([, rect]) => {
+    return rect.top < viewportHeight && rect.bottom > 0;
+  }).map(([element]) => element);
+  const visibleElements = new Set(visible);
   sections.forEach(section => {
-    if (visible.includes(section)) return;
-    if (section.getBoundingClientRect().top >= window.innerHeight) observer?.observe(section);
-    else settle(section);
+    if (visibleElements.has(section)) return;
+    if (observer && positions.get(section).top >= viewportHeight) {
+      pending.add(section);
+    } else {
+      completed.add(section);
+    }
   });
+  pending.forEach(section => observer.observe(section));
   visible.forEach(element => enter(element, 4, 520, true));
 })();

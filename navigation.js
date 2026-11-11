@@ -40,5 +40,4 @@
   window.addEventListener('pageshow', event => { if (event.persisted) setOpen(false); });
   button.hidden = false;
   setOpen(false);
-  document.documentElement.classList.add('mobile-menu-ready');
 })();
